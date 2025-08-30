@@ -1,0 +1,38 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ] # Trigger on push to main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to push to the gh-pages branch
+
+    steps:
+      # 1. Checkout the code
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # (Optional) 2. Setup Node.js if you need to build
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # (Optional) 3. Install dependencies and build
+      - name: Build
+        run: | 
+          npm ci
+          npm run build # Your build script from package.json
+
+      # 4. Deploy to GH Pages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # If you did a build, point to the build folder (e.g., 'dist', 'build')
+          publish_dir: ./ 
+          # If you didn't build, use './' to publish the root.
