@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARK-NOVA-XMD Session Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(-45deg, #4a90e2, #3ac569, #9b59b6, #e74c3c);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            width: 100%;
+            max-width: 500px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #8a2be2 0%, #800080 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, #A8E4A0 0%, #32CD32 100%);
+            color: red;
+            transform: scale(1.05);
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .feature {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #8a2be2;
+        }
+        
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #8a2be2;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DARK-NOVA-XMD Session Generator</h1>
+            <p>Generate session codes for your WhatsApp bot using QR code or pairing code</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="card">
+                <h2><i class="fas fa-qrcode"></i> QR Code Method</h2>
+                <p>Scan the QR code using your WhatsApp mobile app to generate a session code for your bot.</p>
+                <a href="/qr" class="btn" target="_blank">Generate QR Code</a>
+            </div>
+            
+            <div class="card">
+                <h2><i class="fas fa-mobile-alt"></i> Pairing Code Method</h2>
+                <p>Enter your phone number with country code to receive a pairing code for your bot.</p>
+                <a href="/pair" class="btn" target="_blank">Get Pairing Code</a>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Secure</h3>
+                <p>Your session data is encrypted and never shared with third parties.</p>
+            </div>
+            
+            <div class="feature">
+                <i class="fas fa-bolt"></i>
+                <h3>Fast</h3>
+                <p>Generate session codes quickly with our optimized process.</p>
+            </div>
+            
+            <div class="feature">
+                <i class="fas fa-code"></i>
+                <h3>Open Source</h3>
+                <p>Fork the bot and customize it according to your needs.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>DARK-NOVA-XMD &copy; <span id="currentYear"></span></p>
+            <div class="footer-links">
+                <a href="https://github.com/alpha-x-team-ofc/DARK-NOVA-XMD-V.1/fork" target="_blank">
+                    <i class="fab fa-github"></i> Fork Bot
+                </a>
+                <a href="https://chat.whatsapp.com/Ba8imiorZ0e9wdTB4Hbd5M" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Support
+                </a>
+                <a href="https://www.youtube.com/channel/UCQHv5_eoQWCEgaK91e0l3Jw" target="_blank">
+                    <i class="fab fa-youtube"></i> YouTube
+                </a>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
